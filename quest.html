@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동현이의 성장 퀘스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1A1A2E;
+            color: #FFFFFF;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #16213E;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            background-color: #0F3460;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background-color: #53354A;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #FFFFFF;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .expandable:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleTable(id) {
+            var table = document.getElementById(id);
+            if (table.classList.contains('hidden')) {
+                table.classList.remove('hidden');
+            } else {
+                table.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" onclick="toggleTable('certificate')">자격증</a>
+            <a href="#" onclick="toggleTable('competition')">공모전</a>
+            <a href="#" onclick="toggleTable('activity')">대외활동</a>
+            <a href="#" onclick="toggleTable('grade')">학점</a>
+            <a href="#" onclick="toggleTable('intern')">인턴</a>
+        </div>
+        <div class="content">
+            <!-- 자격증 테이블 -->
+            <div id="certificate" class="hidden">
+                <h2>자격증</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구 분</th>
+                            <th>종류</th>
+                            <th>목표시기</th>
+                            <th>취득여부</th>
+                            <th>추가정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ADsP</td>
+                            <td>SW</td>
+                            <td>졸업 전</td>
+                            <td style="background-color: red;">미획득</td>
+                            <td><a href="https://www.dataq.or.kr/www/sub/a_06.do#none">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>물류관리사</td>
+                            <td>물류</td>
+                            <td>졸업 전</td>
+                            <td style="background-color: red;">미획득</td>
+                            <td><a href="https://www.nlic.go.kr/nlic/WhsGudeHtm10.action">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>TOEIC/TOEFL</td>
+                            <td>어학</td>
+                            <td>졸업 전</td>
+                            <td style="background-color: red;">미획득</td>
+                            <td><a href="https://dearbest.tistory.com/3">사이트</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 공모전 테이블 -->
+            <div id="competition" class="hidden">
+                <h2>공모전</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구 분</th>
+                            <th>대회명</th>
+                            <th>주최</th>
+                            <th>목표시기</th>
+                            <th>참가여부</th>
+                            <th>추가정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>물류/학술지</td>
+                            <td>2024 물류분야 논문경진대회</td>
+                            <td>(사)한국물류과학기술학회</td>
+                            <td>-</td>
+                            <td style="background-color: green;">참가</td>
+                            <td><a href="https://www.klst.or.kr/html/?pmode=inputList&smode=view&part=&intAcSeq=26">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>물류</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td style="background-color: red;">참가안함</td>
+                            <td><a href="#">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>데이터 분석</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td style="background-color: red;">참가안함</td>
+                            <td><a href="#">사이트</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 대외활동 테이블 -->
+            <div id="activity" class="hidden">
+                <h2>대외활동</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구 분</th>
+                            <th>활동명</th>
+                            <th>시기</th>
+                            <th>참여여부</th>
+                            <th>추가정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>대외활동 A</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td style="background-color: yellow;">참여예정</td>
+                            <td><a href="#">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>대외활동 B</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td style="background-color: yellow;">참여예정</td>
+                            <td><a href="#">사이트</a></td>
+                        </tr>
+                        <tr>
+                            <td>대외활동 C</td>
+                           <td>-</td>
+                            <td>-</td>
+                            <td style="background-color: yellow;">참여예정</td>
+                            <td><a href="#">사이트</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 학점 테이블 -->
+            <div id="grade" class="hidden">
+                <h2>학점</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>학기</th>
+                            <th>수강 학점</th>
+                            <th>전공 학점</th>
+                            <th>최종 학점(전공)</th>
+                            <th>졸업 잔여 학점(전체/교양)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1학기</td>
+                            <td>18</td>
+                            <td>7</td>
+                            <td>4.5(4.5)</td>
+                            <td>112(22)</td>
+                        </tr>
+                        <tr>
+                            <td>2학기</td>
+                            <td>-</td>
+		<td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 인턴 테이블 -->
+            <div id="intern" class="hidden">
+                <h2>인턴</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>기업명</th>
+                            <th>시기</th>
+                            <th>참여여부</th>
+                            <th>추가정보</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>국토부 인턴십</td>
+                            <td>아세테크</td>
+                            <td>24.07-24.08(7주)</td>
+                            <td style="background-color: orange;">참여 중</td>
+                            <td><a href="http://www.asetec.co.kr/">상세보기</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
